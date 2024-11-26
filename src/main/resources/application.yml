@@ -7,7 +7,7 @@ spring:
 #    password: 12345
 
   datasource:
-    url: jdbc:postgresql://book-scrap-book-scrape.f.aivencloud.com:26725/defaultdb?ssl=require&user=avnadmin&password=AVNS_2ejeKsj8r34RGfD_27o
+    url: jdbc:postgresql://book-scrap-book-scrape.f.aivencloud.com:26725/defaultdb?ssl=require&user=${DB_USER}&password=${DB_PASSWORD}
 
   jpa:
     hibernate:

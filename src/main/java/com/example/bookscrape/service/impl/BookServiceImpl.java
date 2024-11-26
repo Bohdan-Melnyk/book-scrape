@@ -35,7 +35,7 @@ public class BookServiceImpl implements BookService {
         }
         Elements body = doc.select(".product_pod");
 
-        List<Book> books = new ArrayList<Book>();
+        List<Book> books = new ArrayList<>();
 
         for (Element element : body) {
             Book book = new Book();
