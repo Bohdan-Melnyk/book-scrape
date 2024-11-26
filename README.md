@@ -2,6 +2,9 @@ Before the start you need to set up environment variables `DB_USER` and `DB_PASS
 
 To run application you need navigate to the root of the project via command line and execute the command
 
+After the start table in db will create automatically and drop after project stop.
+To prevent drop, change property   jpa.hibernate.ddl-auto. from `create-drop` to `update` in `application.yml`.
+
 `mvn spring-boot:run`
 
 There are 2 endpoints: 
