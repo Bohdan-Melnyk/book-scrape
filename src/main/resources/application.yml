@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: book-scrape
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/bookscrape
+#    username: postgres
+#    password: 12345
+
+  datasource:
+    url: jdbc:postgresql://book-scrap-book-scrape.f.aivencloud.com:26725/defaultdb?ssl=require&user=avnadmin&password=AVNS_2ejeKsj8r34RGfD_27o
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
