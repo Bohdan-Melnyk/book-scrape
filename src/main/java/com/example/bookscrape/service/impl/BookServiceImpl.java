@@ -13,6 +13,7 @@ import org.jsoup.select.Elements;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +28,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public List<Book> scrapBooks(String url) {
-        Document doc = null;
+        Document doc;
         try {
             doc = Jsoup.connect(url).get();
         } catch (IOException e) {
@@ -45,7 +46,7 @@ public class BookServiceImpl implements BookService {
             String availability = element.select(".availability").text();
 
             book.setTitle(title);
-            book.setPrice(Double.parseDouble(price.replace("£", "").trim()));
+            book.setPrice(new BigDecimal(price.replace("£", "").trim()));
             book.setAvailability(availability.equals("In stock") ? Availability.IN_STOCK : Availability.NOT_AVAILABLE);
             book.setRating(rating);
 

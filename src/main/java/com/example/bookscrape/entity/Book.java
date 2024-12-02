@@ -9,17 +9,14 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 @Entity
 @Table(name = "book")
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
 public class Book {
@@ -32,7 +29,7 @@ public class Book {
     private String title;
 
     @Column
-    private Double price;
+    private BigDecimal price;
 
     @Column
     @Enumerated(EnumType.STRING)
